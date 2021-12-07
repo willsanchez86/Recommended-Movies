@@ -35,7 +35,7 @@ class Movie(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(250), unique=True, nullable=False)
     year = db.Column(db.Integer, nullable=False)
-    description = db.Column(db.Text, nullable=False)
+    description = db.Column(db.String(1000), nullable=False)
     rating = db.Column(db.Float(), nullable=False)
     ranking = db.Column(db.Integer)
     review = db.Column(db.String(250), nullable=False)
@@ -44,18 +44,18 @@ class Movie(db.Model):
 db.create_all()
 
 # #Create Record
-new_movie = Movie(
-    title="Phone Booth",
-    year=2002,
-    description="Publicist Stuart Shepard finds himself trapped in a phone booth, pinned down by an extortionist's sniper rifle. Unable to leave or receive outside help, Stuart's negotiation with the caller leads to a jaw-dropping climax.",
-    rating=7.3,
-    ranking=10,
-    review="My favourite character was the caller.",
-    img_url="https://image.tmdb.org/t/p/w500/tjrX2oWRCM3Tvarz38zlZM7Uc10.jpg"
-)
-
-db.session.add(new_movie)
-db.session.commit()
+# new_movie = Movie(
+#     title="Phone Booth",
+#     year=2002,
+#     description="Publicist Stuart Shepard finds himself trapped in a phone booth, pinned down by an extortionist's sniper rifle. Unable to leave or receive outside help, Stuart's negotiation with the caller leads to a jaw-dropping climax.",
+#     rating=7.3,
+#     ranking=10,
+#     review="My favourite character was the caller.",
+#     img_url="https://image.tmdb.org/t/p/w500/tjrX2oWRCM3Tvarz38zlZM7Uc10.jpg"
+# )
+#
+# db.session.add(new_movie)
+# db.session.commit()
 
 
 @app.route("/")
