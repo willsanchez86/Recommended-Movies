@@ -41,7 +41,7 @@ class Movie(db.Model):
     review = db.Column(db.String(250), nullable=False)
     img_url = db.Column(db.String(250), nullable=False)
 
-db.create_all()
+#db.create_all()
 
 # #Create Record
 # new_movie = Movie(
